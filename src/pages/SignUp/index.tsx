@@ -18,7 +18,7 @@ const SignUp = () => {
         <Wrapper>
             <Background image={background}/>
             <Card width="403px" height="auto">
-                <img src={logo} height={45} alt="logo inter" />
+                <img src={logo} height={45} alt="logo gualter bank" />
 
                 <InputContainer>
                     <Input placeholder="NOME"/>
