@@ -2,7 +2,7 @@ import {Wrapper, Background, InputContainer, ButtonContainer} from './styles';
 import { useNavigate, Link } from 'react-router-dom';
 
 import background from '../../assets/images/background-login.jpg';
-import logoInter from '../../assets/images/Inter-orange.png';
+import logo from '../../assets/images/gualter.png';
 
 import Card from '../../components/Card';
 import Input from '../../components/Input';
@@ -18,7 +18,7 @@ const SignUp = () => {
         <Wrapper>
             <Background image={background}/>
             <Card width="403px" height="auto">
-                <img src={logoInter} width={172} height={61} alt="logo inter" />
+                <img src={logo} height={45} alt="logo inter" />
 
                 <InputContainer>
                     <Input placeholder="NOME"/>
