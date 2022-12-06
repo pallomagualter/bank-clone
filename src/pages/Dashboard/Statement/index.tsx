@@ -34,8 +34,8 @@ const Statement = () => {
     const statements: StatementItem[] = [
         {
             user:{
-                firstName: 'Pablo',
-                lastName: 'Henrique'
+                firstName: 'Palloma',
+                lastName: 'Gualter'
             },
             value: 250.00,
             type: 'pay',
