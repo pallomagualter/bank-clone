@@ -1,7 +1,7 @@
 import {HeaderContainer, HeaderWrapper, UserInfo} from './styles';
 import UserCircle from '../UserCircle';
 
-import logoInter from '../../assets/images/Inter-orange.png';
+import logo from '../../assets/images/gualter.png';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -15,7 +15,7 @@ const Header = () => {
     return (
         <HeaderContainer>
             <HeaderWrapper>
-                   <img src={logoInter} width={172} height={61} alt="logo inter" />
+                   <img src={logo} height={45} alt="logo gualter bank" />
                 <UserInfo>
                   <UserCircle initials="PG" />
                   <div>
