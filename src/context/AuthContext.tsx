@@ -17,7 +17,7 @@ interface ContextData {
   userSignUp: (userData: SignUpData) => void;
 }
 
-const AuthContext = createContext<ContextData>({} as ContextData);
+export const AuthContext = createContext<ContextData>({} as ContextData);
 
 interface Props {
   children: React.ReactNode;
@@ -33,7 +33,6 @@ export const AuthProvider: React.FC<Props> = ({ children }) => {
     if(data?.status === 'error'){
       return data;
     }
-
 
     if (data.accessToken) {
       localStorage.setItem('@GualterBank:Token', data.accessToken);
