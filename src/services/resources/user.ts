@@ -17,7 +17,7 @@ export const singIn =async (data: SignInData) => {
 }
 
 export const me =async () => {
-  return api.post('/user/singUp');
+  return api.get('/user/singUp');
 }
 
 export const singUp =async (data: SignUpData) => {
