@@ -1,11 +1,11 @@
 import api from "../api";
 
-interface SignInData {
+export interface SignInData {
   email: string;
   password: string;
 }
 
-interface SignUpData {
+export interface SignUpData {
   firstName: string;
   lastName: string;
   email: string;
