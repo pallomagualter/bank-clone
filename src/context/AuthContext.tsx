@@ -1,20 +1,13 @@
+import { AxiosResponse } from "axios";
 import { createContext, useCallback, useEffect, useState } from "react";
 
-import { SignInData, SignUpData, singIn, singUp, me } from "../services/resources/user";
+import { SignInData, SignUpData, UserDTO , singIn, singUp, me } from "../services/resources/user";
 
-interface UserDTO {
-  id: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  accountNumber: number;
-  accountDigit: number;
-  wallet: string;
-}
 interface ContextData {
   user: UserDTO;
-  userSignIn: (userData: SignInData) => void;
-  userSignUp: (userData: SignUpData) => void;
+  userSignIn: (userData: SignInData) => Promise<UserDTO>;
+  userSignUp: (userData: SignUpData) => Promise<UserDTO>;
+  me: () => Promise<AxiosResponse<UserDTO, any>>;
 }
 
 export const AuthContext = createContext<ContextData>({} as ContextData);
@@ -38,7 +31,7 @@ export const AuthProvider: React.FC<Props> = ({ children }) => {
       localStorage.setItem('@GualterBank:Token', data.accessToken);
     }
 
-    await getCurrentUser();
+    return getCurrentUser();
   }
 
   const getCurrentUser = async () => {
@@ -50,10 +43,11 @@ export const AuthProvider: React.FC<Props> = ({ children }) => {
   const userSignUp = async (userData: SignUpData) => {
     const {data} = await singUp(userData);
     localStorage.setItem('@GualterBank:Token', data.accessToken);
+    return getCurrentUser();
   }
 
   return (
-    <AuthContext.Provider value={{user, userSignIn, userSignUp}}>
+    <AuthContext.Provider value={{user, userSignIn, userSignUp, me}}>
       {children}
     </AuthContext.Provider>
   )

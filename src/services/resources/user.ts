@@ -12,12 +12,22 @@ export interface SignUpData {
   password: string;
 }
 
+export interface UserDTO {
+  id: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  accountNumber: number;
+  accountDigit: number;
+  wallet: string;
+}
+
 export const singIn =async (data: SignInData) => {
    return api.post('/user/singIn', data);
 }
 
 export const me =async () => {
-  return api.get('/user/singUp');
+  return api.get<UserDTO>('/user/me');
 }
 
 export const singUp =async (data: SignUpData) => {
