@@ -9,7 +9,7 @@ import Statement from './Statement';
 
 const Dashboard = () => {
 
-    const wallet = 1000.00
+    const wallet = 7000.00
 
     return (
         <DashboardBackground>
