@@ -1,4 +1,4 @@
-import api from "./resources/api";
+import api from "../api";
 
 interface SignInData {
   email: string;
