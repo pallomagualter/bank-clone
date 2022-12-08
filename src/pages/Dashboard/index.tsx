@@ -11,7 +11,7 @@ import Statement from './Statement';
 const Dashboard = () => {
 
     const {user} = useAuth();
-    const wallet = user.wallet;
+    const wallet = user?.wallet || 0;
 
     return (
         <DashboardBackground>

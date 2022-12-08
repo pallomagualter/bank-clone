@@ -52,7 +52,7 @@ const Statement = () => {
 
     return (
         <StatementContainer>
-            {statements.map(statement => <StatementItem {...statement}/>)}
+            {statements?.map(statement => <StatementItem {...statement}/>)}
         </StatementContainer>
     )
 }
