@@ -4,12 +4,14 @@ import Header from '../../components/Header';
 import Card from '../../components/Card';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
+import useAuth from '../../hooks/useAuth';
 
 import Statement from './Statement';
 
 const Dashboard = () => {
 
-    const wallet = 7000.00
+    const {user} = useAuth();
+    const wallet = user.wallet;
 
     return (
         <DashboardBackground>
