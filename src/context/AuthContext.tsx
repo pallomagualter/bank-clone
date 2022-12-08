@@ -7,7 +7,7 @@ interface ContextData {
   user: UserDTO;
   userSignIn: (userData: SignInData) => Promise<UserDTO>;
   userSignUp: (userData: SignUpData) => Promise<UserDTO>;
-  me: () => Promise<AxiosResponse<UserDTO, any>>;
+  getCurrentUser: () => Promise<UserDTO>;
 }
 
 export const AuthContext = createContext<ContextData>({} as ContextData);
@@ -18,7 +18,16 @@ interface Props {
 
 export const AuthProvider: React.FC<Props> = ({ children }) => {
 
-  const [user, setUser] = useState<UserDTO>({} as UserDTO);
+  const [user, setUser] = useState<UserDTO>(() => {
+    
+    const user = localStorage.getItem('@GualterBank:User');
+
+    if (user) {
+      return JSON.parse(user);
+    }
+
+    return {} as UserDTO;
+  });
 
   const userSignIn = async (userData: SignInData) => {
     const {data} = await singIn(userData);
@@ -32,22 +41,28 @@ export const AuthProvider: React.FC<Props> = ({ children }) => {
     }
 
     return getCurrentUser();
+  
   }
 
   const getCurrentUser = async () => {
     const {data} = await me();
     setUser(data);
-    return data;
+    localStorage.setItem('@GualterBank:User', JSON.stringify(user));
+    return user;
   }
 
   const userSignUp = async (userData: SignUpData) => {
     const {data} = await singUp(userData);
-    localStorage.setItem('@GualterBank:Token', data.accessToken);
+    
+    if(data.accessToken) {
+      localStorage.setItem('@GualterBank:Token', data.accessToken);
+    }
+
     return getCurrentUser();
   }
 
   return (
-    <AuthContext.Provider value={{user, userSignIn, userSignUp, me}}>
+    <AuthContext.Provider value={{user, userSignIn, userSignUp, getCurrentUser}}>
       {children}
     </AuthContext.Provider>
   )
