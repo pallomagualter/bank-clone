@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import {DashboardBackground, BodyContainer, InlineContainer, InlineTitle} from './styles';
 
 import Header from '../../components/Header';
@@ -14,9 +14,25 @@ const Dashboard = () => {
     const {user, getCurrentUser} = useAuth();
     const wallet = user?.wallet || 0;
 
+		const [key, setKey] = useState('');
+		const [generatedKey, setGeneratedKey] = useState('');
+		const [newValue, setNewValue] = useState('');
+
+		const handleNewPayment = () => {
+
+		}
+
+		const handleReceivePix = () => {
+			
+		}
+
     useEffect(() => {
 			getCurrentUser();
     }, [])
+
+		if (!user) {
+			return null;
+		}
 
     return (
 			<DashboardBackground>
