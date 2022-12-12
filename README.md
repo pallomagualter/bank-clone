@@ -18,6 +18,21 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Expo](https://expo.io/)
   -->
 
+## ✅ Checklist recursos requeridos na API:
+
+- Usuário
+
+  - [ ] Cadastrar novo usuário
+  - [ ] Efeturar login e retornar token de acesso
+
+- PIX
+
+  - [ ] Efetuar solicitação de PIX
+  - [ ] Receber PIX
+
+- Regras:
+  - quando receber um pix, salvar na tabela de transação
+
 ## :memo: Licença
 
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
