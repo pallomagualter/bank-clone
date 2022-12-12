@@ -23,4 +23,8 @@ export const CardContainer = styled.div<{
     flex-direction: column;
 
     z-index: 5000;
+
+    > img {
+        margin-top: 20px;
+    }
 `
