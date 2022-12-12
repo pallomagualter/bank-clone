@@ -2,9 +2,22 @@
   💲 GUALTER BANK 💲
 </h1>
 
-Projeto referente a dev week front-end da DIO baseado no projeto do banco Inter.
+- Projeto referente a dev week front-end da DIO baseado no projeto do banco Inter.
 
-![Gualter Bank](./gualter-bank.gif)
+<h1 align="center">
+    <img alt="Sign-in-gualter-bank" title="Sign-in-gualter-bank" width="80%"
+    src="https://github.com/pallomagualter/bank-clone/blob/main/img/signin.png" />
+</h1>
+
+<h1 align="center">
+    <img alt="Sign-up-gualter-bank" title="Sign-up-gualter-bank" width="80%"
+    src="https://github.com/pallomagualter/bank-clone/blob/main/img/signup.png" />
+</h1>
+
+<h1 align="center">
+    <img alt="Dashboard-gualter-bank" title="Dashboard-gualter-bank" width="80%"
+    src="https://github.com/pallomagualter/bank-clone/blob/main/img/dashboard.png" />
+</h1>
 
 ## 🚀 Tecnologias
 
